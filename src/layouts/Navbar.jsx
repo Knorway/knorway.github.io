@@ -1,4 +1,4 @@
-import { Box, Link, Stack, Text } from '@chakra-ui/layout';
+import { Link, Stack } from '@chakra-ui/layout';
 import NextLink from 'next/link';
 
 const categories = [
