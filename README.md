@@ -8,4 +8,4 @@
 
 기타
 - Chakra-ui
-- Github Action 배포 자동화
+- Github Actions 배포 자동화

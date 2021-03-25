@@ -11,6 +11,7 @@ const Post = ({ post, data }) => {
 	const hydratedContent = hydrate(post.content, {
 		components: MDXComponent,
 	});
+
 	return (
 		<Box alignSelf='flex-start'>
 			<Head>
