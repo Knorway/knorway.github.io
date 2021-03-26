@@ -2,16 +2,12 @@ import fs from 'fs';
 import matter from 'gray-matter';
 import Head from 'next/head';
 import path from 'path';
-import renderToString from 'next-mdx-remote/render-to-string';
-import hydrate from 'next-mdx-remote/hydrate';
-import MDXComponent from '../../src/components/MDXComponent';
 import { Box, Text, VStack } from '@chakra-ui/layout';
+import { MDXProvider } from '@mdx-js/react';
+import MDX from '@mdx-js/runtime';
+import MDXComponents from '../../src/components/MDXComponent';
 
-const Post = ({ post, data }) => {
-	const hydratedContent = hydrate(post.content, {
-		components: MDXComponent,
-	});
-
+const Post = ({ data, content }) => {
 	return (
 		<Box alignSelf='flex-start'>
 			<Head>
@@ -25,15 +21,17 @@ const Post = ({ post, data }) => {
 				<Text ps='p' fontSize='sm'>
 					{data.publishedAt}
 				</Text>
+				<MDXProvider components={MDXComponents}>
+					<MDX>{content}</MDX>
+				</MDXProvider>
 			</VStack>
-			<div>{hydratedContent}</div>
 		</Box>
 	);
 };
 
 export default Post;
 
-export const getStaticPaths = () => {
+export async function getStaticPaths() {
 	const fileNames = fs.readdirSync('posts');
 	const paths = fileNames.map((fileName) => ({
 		params: {
@@ -45,22 +43,17 @@ export const getStaticPaths = () => {
 		paths,
 		fallback: false,
 	};
-};
+}
 
-export const getStaticProps = async ({ params }) => {
+export async function getStaticProps({ params }) {
 	const { slug } = params;
 	const file = fs.readFileSync(path.join('posts', `${slug}.md`), 'utf8');
-	const mattered = matter(file);
-	const mdxSource = await renderToString(mattered.content, {
-		components: MDXComponent,
-	});
+	const { data, content } = matter(file);
 
 	return {
 		props: {
-			data: mattered.data,
-			post: {
-				content: mdxSource,
-			},
+			data,
+			content,
 		},
 	};
-};
+}

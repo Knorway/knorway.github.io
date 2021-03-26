@@ -12,7 +12,7 @@ export default function App({ postList }) {
 	);
 }
 
-export const getStaticProps = () => {
+export const getStaticProps = async () => {
 	const slugs = fs.readdirSync('posts').map((dir) => dir.replace('.md', ''));
 	const postList = slugs.map((slug) => {
 		const file = fs.readFileSync(path.join('posts', `${slug}.md`), 'utf8');

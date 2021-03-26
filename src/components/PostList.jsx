@@ -2,7 +2,6 @@ import { Box, Link, Text, VStack } from '@chakra-ui/layout';
 import NextLink from 'next/link';
 
 const PostList = ({ postList }) => {
-	console.log(postList);
 	return (
 		<VStack as='main'>
 			{postList.map((post) => (
