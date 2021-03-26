@@ -51,7 +51,9 @@ export const getStaticProps = async ({ params }) => {
 	const { slug } = params;
 	const file = fs.readFileSync(path.join('posts', `${slug}.md`), 'utf8');
 	const mattered = matter(file);
-	const mdxSource = await renderToString(mattered.content);
+	const mdxSource = await renderToString(mattered.content, {
+		components: MDXComponent,
+	});
 
 	return {
 		props: {
