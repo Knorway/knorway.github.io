@@ -18,7 +18,7 @@ const Post = ({ post, data }) => {
 				<title>{data.title}</title>
 			</Head>
 			<VStack mb='12' align='flex-start'>
-				<Text as='h1' fontSize='6xl' fontWeight='bold'>
+				<Text as='h1' fontSize='5xl' fontWeight='bold'>
 					{data.title}
 				</Text>
 				<Text>{data.author}</Text>
@@ -49,7 +49,7 @@ export const getStaticPaths = () => {
 
 export const getStaticProps = async ({ params }) => {
 	const { slug } = params;
-	const file = fs.readFileSync(path.join('posts', `${slug}.md`), 'utf-8');
+	const file = fs.readFileSync(path.join('posts', `${slug}.md`), 'utf8');
 	const mattered = matter(file);
 	const mdxSource = await renderToString(mattered.content);
 

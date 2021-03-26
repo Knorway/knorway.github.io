@@ -15,11 +15,7 @@ const AppLayout = ({ children }) => {
 					overflow='initial'
 					alignItems='center'
 					position='relative'
-					mb='5'
-					// position='sticky'
-					// top='0'
-					// zIndex='10'
-					// background='#171717'
+					mb='16'
 				>
 					<Navbar />
 					<Text

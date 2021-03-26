@@ -1,24 +1,29 @@
-import { Link } from '@chakra-ui/layout';
+import { VStack } from '@chakra-ui/layout';
 import fs from 'fs';
-import NextLink from 'next/link';
+import matter from 'gray-matter';
+import path from 'path';
+import PostList from '../src/components/PostList';
 
-export default function App({ slugs }) {
+export default function App({ postList }) {
 	return (
-		<>
-			{slugs.map((slug) => (
-				<NextLink key={slug} href={`/posts/${slug}`}>
-					<Link>{slug}</Link>
-				</NextLink>
-			))}
-			{/* TODO: <PostLayout /> */}
-		</>
+		<VStack>
+			<PostList postList={postList} />
+		</VStack>
 	);
 }
 
 export const getStaticProps = () => {
-	const slugs = fs.readdirSync('posts').map((slug) => slug.replace('.md', ''));
+	const slugs = fs.readdirSync('posts').map((dir) => dir.replace('.md', ''));
+	const postList = slugs.map((slug) => {
+		const file = fs.readFileSync(path.join('posts', `${slug}.md`), 'utf8');
+		const mattered = matter(file);
+		return {
+			...mattered.data,
+			slug,
+		};
+	});
 
 	return {
-		props: { slugs },
+		props: { postList },
 	};
 };
