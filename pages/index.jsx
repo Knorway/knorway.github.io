@@ -3,10 +3,14 @@ import fs from 'fs';
 import matter from 'gray-matter';
 import path from 'path';
 import PostList from '../src/components/PostList';
+import Head from 'next/head';
 
 export default function App({ postList }) {
 	return (
 		<VStack>
+			<Head>
+				<title>blog | knorway.github.io</title>
+			</Head>
 			<PostList postList={postList} />
 		</VStack>
 	);

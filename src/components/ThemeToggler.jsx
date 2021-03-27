@@ -9,6 +9,7 @@ const ThemeToggler = () => {
 			icon={colorMode === 'dark' ? <SunIcon /> : <MoonIcon />}
 			onClick={toggleColorMode}
 			rounded='full'
+			_focus={{ outline: 0 }}
 		/>
 	);
 };

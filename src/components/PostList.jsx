@@ -15,7 +15,7 @@ const PostList = ({ postList }) => {
 				>
 					<Box marginLeft='5'>
 						<NextLink href={`/posts/${post.slug}`}>
-							<Link>
+							<Link _hover={{ textDecoration: 'none' }}>
 								<Text
 									as='h2'
 									fontSize='3xl'
@@ -25,11 +25,11 @@ const PostList = ({ postList }) => {
 								>
 									{post.title}
 								</Text>
-								<Text mb='2' fontSize='sm' fontWeight='500' color='gray'>
-									{post.publishedAt} ·
-								</Text>
 							</Link>
 						</NextLink>
+						<Text fontSize='sm' fontWeight='500' color='gray' mb='1'>
+							{post.publishedAt} ·
+						</Text>
 						<Text>{post.summary}</Text>
 					</Box>
 					{/* TODO: Tag Genarator */}

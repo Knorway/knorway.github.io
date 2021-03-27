@@ -17,9 +17,8 @@ const Post = ({ data, content }) => {
 				<Text as='h1' fontSize='5xl' fontWeight='bold'>
 					{data.title}
 				</Text>
-				<Text>{data.author}</Text>
-				<Text ps='p' fontSize='sm'>
-					{data.publishedAt}
+				<Text ps='p' fontSize='sm' color='gray' fontWeight='500' mb='5'>
+					{data.publishedAt} ·
 				</Text>
 				<MDXProvider components={MDXComponents}>
 					<MDX>{content}</MDX>
@@ -34,9 +33,7 @@ export default Post;
 export async function getStaticPaths() {
 	const fileNames = fs.readdirSync('posts');
 	const paths = fileNames.map((fileName) => ({
-		params: {
-			slug: fileName.replace('.md', ''),
-		},
+		params: { slug: fileName.replace('.md', '') },
 	}));
 
 	return {
