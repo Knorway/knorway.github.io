@@ -1,6 +1,7 @@
 ---
 title: Markdown Cheatsheet
 publishedAt: '2020-03-27'
+tags: 'Next, Typescript'
 summary: This is intended as a quick reference and showcase. see John Gruber's spec and the Github-flavored Markdown info...
 ---
 

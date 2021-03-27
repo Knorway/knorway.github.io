@@ -7,7 +7,7 @@ const overrides = {
 			body: {
 				fontFamily: 'body',
 				color: mode('gray.800', 'gray.100')(props),
-				bg: mode('gray.50', '#171717')(props),
+				bg: mode('white', '#171717')(props),
 				// color: mode('gray.800', 'whiteAlpha.900')(props),
 				// bg: mode('white', 'gray.800')(props),
 				lineHeight: 'base',

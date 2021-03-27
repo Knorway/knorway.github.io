@@ -1,6 +1,7 @@
 ---
 title: 테스트 포스트입니다.
 publishedAt: '2012-03-16'
+tags: 'Javascript'
 summary: '포스트 작성 테스트 중입니다'
 ---
 

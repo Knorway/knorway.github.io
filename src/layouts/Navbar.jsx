@@ -36,7 +36,7 @@ const Navbar = () => {
 				isInline
 				spacing='4'
 				justifyContent='space-between'
-				display={['none', 'none', 'flex', 'flex']}
+				display={['none', 'none', 'flex']}
 			>
 				{categories.map((item) => (
 					<NextLink href={item.link} key={item.title}>
@@ -48,16 +48,15 @@ const Navbar = () => {
 				<Text
 					fontSize='4xl'
 					fontWeight='500'
-					// position={{ base: 'unset', lg: 'absolute' }}
 					position='absolute'
 					m='auto'
 					left='50%'
 					top='50%'
 					transform='translate(-50%, -50%)'
 				>
-					<NextLink href='/'>
+					<NextLink href='/' className='sdf'>
 						<Link
-							paddingBottom='3'
+							paddingBottom='2'
 							display='inline-block'
 							_hover={{ textDecoration: 'none' }}
 						>
@@ -66,7 +65,7 @@ const Navbar = () => {
 					</NextLink>
 				</Text>
 			</Stack>
-			<Box display={['block', 'block', 'none', 'none']}>
+			<Box display={['block', 'block', 'none']}>
 				<Menu>
 					<MenuButton
 						as={IconButton}

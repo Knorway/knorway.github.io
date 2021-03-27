@@ -2,6 +2,7 @@
 title: 'Test Post'
 author: '김노르웨이'
 publishedAt: '2020-03-22'
+tags: 'React, Javascript'
 summary: 'This is the summary of our blog post! This is the summary of our blog post! This is the summary of our blog post!'
 ---
 

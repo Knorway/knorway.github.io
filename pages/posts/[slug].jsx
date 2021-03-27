@@ -2,10 +2,11 @@ import fs from 'fs';
 import matter from 'gray-matter';
 import Head from 'next/head';
 import path from 'path';
-import { Box, Text, VStack } from '@chakra-ui/layout';
+import { Box, HStack, Text, VStack } from '@chakra-ui/layout';
 import { MDXProvider } from '@mdx-js/react';
 import MDX from '@mdx-js/runtime';
 import MDXComponents from '../../src/components/MDXComponent';
+import TagGenerator from '../../src/components/TagGenerator';
 
 const Post = ({ data, content }) => {
 	return (
@@ -14,12 +15,15 @@ const Post = ({ data, content }) => {
 				<title>{data.title}</title>
 			</Head>
 			<VStack mb='12' align='flex-start'>
-				<Text as='h1' fontSize='5xl' fontWeight='bold'>
+				<Text as='h1' fontSize='4xl' fontWeight='bold'>
 					{data.title}
 				</Text>
-				<Text ps='p' fontSize='sm' color='gray' fontWeight='500' mb='5'>
-					{data.publishedAt} ·
-				</Text>
+				<HStack mb='5'>
+					<Text ps='p' fontSize='sm' color='gray' fontWeight='500'>
+						{data.publishedAt} ·
+					</Text>
+					<TagGenerator tags={data.tags} />
+				</HStack>
 				<MDXProvider components={MDXComponents}>
 					<MDX>{content}</MDX>
 				</MDXProvider>

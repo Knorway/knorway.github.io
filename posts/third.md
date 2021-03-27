@@ -2,6 +2,7 @@
 title: TABLE PARSING
 publishedAt: '2021-02-06'
 author: '김노르웨이'
+tags: 'React'
 summary: path to data files to supply the data that will be passed into templates.
 ---
 

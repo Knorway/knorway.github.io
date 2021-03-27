@@ -15,6 +15,7 @@ import {
 	Tr,
 	useColorMode,
 } from '@chakra-ui/react';
+import CodeHighlight from './CodeHighlight';
 
 const Quote = (props) => {
 	const { colorMode } = useColorMode();
@@ -63,7 +64,15 @@ const MDXComponents = {
 	hr: Hr,
 	a: (props) => <Link {...props} color='blue.500' isExternal />,
 	p: (props) => (
-		<Text as='p' mt={0} lineHeight='tall' fontSize='lg' fontWeight='500' {...props} />
+		<Text
+			as='p'
+			mt={0}
+			mb={1}
+			lineHeight='tall'
+			fontSize='lg'
+			fontWeight='500'
+			{...props}
+		/>
 	),
 	ul: (props) => <Box as='ul' pt={2} pl={4} ml={2} {...props} />,
 	ol: (props) => <Box as='ol' pt={2} pl={4} ml={2} {...props} />,
@@ -75,6 +84,7 @@ const MDXComponents = {
 	th: (props) => <Th {...props} />,
 	td: (props) => <Td {...props} />,
 	caption: (props) => <TableCaption {...props} />,
+	code: (props) => <CodeHighlight {...props} />,
 };
 
 export default MDXComponents;
