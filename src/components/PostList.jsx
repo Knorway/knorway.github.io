@@ -38,7 +38,6 @@ const PostList = ({ postList }) => {
 						</HStack>
 						<Text>{post.summary}</Text>
 					</Box>
-					{/* TODO: Tag Genarator */}
 				</Box>
 			))}
 		</VStack>
