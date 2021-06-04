@@ -13,9 +13,11 @@ export default function CodeHighlight({ children, className }) {
 					style={{
 						...style,
 						padding: '20px',
+						paddingBottom: '0',
 						fontSize: '14px',
 						fontWeight: 'bold',
 						borderRadius: '10px',
+						// fontFamily: 'monaco',
 					}}
 				>
 					{tokens.map((line, i) => (
