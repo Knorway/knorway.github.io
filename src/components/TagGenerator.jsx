@@ -20,6 +20,11 @@ const colorScheme = {
 		background: 'gray.100',
 		color: 'black',
 	},
+	Node: {
+		variant: 'solid',
+		background: 'green.600',
+		color: 'white',
+	},
 	//TODO: 일반
 };
 
@@ -27,7 +32,7 @@ const TagGenerator = ({ tags }) => {
 	return (
 		<Stack direction='row'>
 			{tags?.split(',').map((tag, i) => (
-				<Badge {...colorScheme[tag.trim()]} key={i}>
+				<Badge {...colorScheme[tag.trim()]} key={i} textTransform='capitalize'>
 					{tag}
 				</Badge>
 			))}

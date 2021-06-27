@@ -12,11 +12,10 @@ declare global {
 function MyApp({ Component, pageProps }) {
 	useEffect(() => {
 		window.dataLayer = window.dataLayer || [];
-		function gtag(...args) {
+		function gtag(...args: any) {
 			window.dataLayer.push(arguments);
 		}
 		gtag('js', new Date());
-
 		gtag('config', 'G-8H4602H81M');
 	}, []);
 

@@ -1,14 +1,11 @@
-import { IconButton } from '@chakra-ui/button';
-import {
-	AddIcon,
-	EditIcon,
-	ExternalLinkIcon,
-	HamburgerIcon,
-	RepeatIcon,
-} from '@chakra-ui/icons';
+import NextLink from 'next/link';
 import { Box, Link, Stack, Text } from '@chakra-ui/layout';
 import { Menu, MenuButton, MenuItem, MenuList } from '@chakra-ui/menu';
-import NextLink from 'next/link';
+import { IconButton } from '@chakra-ui/button';
+import { HamburgerIcon } from '@chakra-ui/icons';
+import { AiTwotoneHome } from 'react-icons/ai';
+import { IoDocumentTextSharp } from 'react-icons/io5';
+import { SiGithub } from 'react-icons/si';
 
 const categories = [
 	// {
@@ -19,12 +16,12 @@ const categories = [
 	// 	title: '포스트',
 	// 	link: '/posts',
 	// },
+	// {
+	// 	title: '포트폴리오',
+	// 	link: '/potfolio',
+	// },
 	{
-		title: '포트폴리오',
-		link: '/potfolio',
-	},
-	{
-		title: '어바웃',
+		title: 'about',
 		link: '/about',
 	},
 ];
@@ -45,6 +42,11 @@ const Navbar = () => {
 						</Link>
 					</NextLink>
 				))}
+				<Box display='flex' alignItems='center'>
+					<Link target='_blank' href='https://github.com/Knorway'>
+						<SiGithub />
+					</Link>
+				</Box>
 				<Text
 					fontSize='4xl'
 					fontWeight='500'
@@ -73,20 +75,19 @@ const Navbar = () => {
 						icon={<HamburgerIcon />}
 						size='md'
 						variant='outline'
+						border='none'
 					/>
 					<MenuList>
-						<MenuItem icon={<AddIcon />} command='⌘T'>
-							New Tab
-						</MenuItem>
-						<MenuItem icon={<ExternalLinkIcon />} command='⌘N'>
-							New Window
-						</MenuItem>
-						<MenuItem icon={<RepeatIcon />} command='⌘⇧N'>
-							Open Closed Tab
-						</MenuItem>
-						<MenuItem icon={<EditIcon />} command='⌘O'>
-							Open File...
-						</MenuItem>
+						<NextLink href='/'>
+							<MenuItem icon={<AiTwotoneHome />}>
+								<Link>home</Link>
+							</MenuItem>
+						</NextLink>
+						<NextLink href='/about'>
+							<MenuItem icon={<IoDocumentTextSharp />}>
+								<Link>about</Link>
+							</MenuItem>
+						</NextLink>
 					</MenuList>
 				</Menu>
 			</Box>

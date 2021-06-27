@@ -4,7 +4,7 @@ import Navbar from './Navbar';
 
 const AppLayout = ({ children }) => {
 	return (
-		<Box maxWidth='768px' m='auto'>
+		<Box maxWidth='768px' m='auto' w='100%'>
 			<VStack mt='4' mx='4'>
 				<Stack
 					as='nav'
