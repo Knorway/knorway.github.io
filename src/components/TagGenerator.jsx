@@ -25,6 +25,21 @@ const colorScheme = {
 		background: 'green.600',
 		color: 'white',
 	},
+	HTML: {
+		variant: 'solid',
+		background: '#cd5634',
+		color: 'white',
+	},
+	CSS: {
+		variant: 'solid',
+		background: '#2f6eb5',
+		color: 'white',
+	},
+	Express: {
+		variant: 'solid',
+		background: '#f7f7f7',
+		color: 'black',
+	},
 	//TODO: 일반
 };
 
