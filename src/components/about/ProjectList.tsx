@@ -1,7 +1,4 @@
-import { Box, Flex, HStack, Img, Link, Text, VStack } from '@chakra-ui/react';
-
-// 내일 다른 프로젝트 참고해서 a 링크. 큰일났네 다 까먹었어
-// 그냥 링크만 걸 거 같긴 하지만
+import { Box, Flex, Link, Text, VStack } from '@chakra-ui/react';
 
 const ProjectList = () => {
 	return (
@@ -17,7 +14,7 @@ const ProjectList = () => {
 					maxW='170px'
 					w='100%'
 					height='150px'
-					backgroundImage='url("thumnail_typestagram.png")'
+					backgroundImage='url("img/potfolio/thumbnail_typestagram.png")'
 					backgroundPosition='center'
 					backgroundSize='cover'
 					display={['none', 'block']}
@@ -58,14 +55,15 @@ const ProjectList = () => {
 					</Text>
 				</Box>
 			</Flex>
+
 			{/* Root-admin */}
 			<Flex border='1px solid black' borderColor='whiteAlpha.300' w='100%'>
 				<Box
 					maxW='170px'
 					w='100%'
 					height='150px'
-					backgroundImage='url("thumnail_root.png")'
-					backgroundPosition='center'
+					backgroundImage='url("img/potfolio/thumbnail_root.png")'
+					backgroundPosition='left'
 					backgroundSize='cover'
 					display={['none', 'block']}
 				></Box>
