@@ -14,7 +14,7 @@ const ProjectList = () => {
 					maxW='170px'
 					w='100%'
 					height='150px'
-					backgroundImage='url("img/potfolio/thumbnail_typestagram.png")'
+					backgroundImage='url("/img/potfolio/thumbnail_typestagram.png")'
 					backgroundPosition='center'
 					backgroundSize='cover'
 					display={['none', 'block']}
@@ -62,7 +62,7 @@ const ProjectList = () => {
 					maxW='170px'
 					w='100%'
 					height='150px'
-					backgroundImage='url("img/potfolio/thumbnail_root.png")'
+					backgroundImage='url("/img/potfolio/thumbnail_root.png")'
 					backgroundPosition='left'
 					backgroundSize='cover'
 					display={['none', 'block']}
