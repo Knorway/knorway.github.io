@@ -4,9 +4,7 @@ import Head from 'next/head';
 import Intro from '../../src/components/about/Intro';
 import ProjectList from '../../src/components/about/ProjectList';
 import SectionDivider from '../../src/components/about/SectionDivider';
-import { AiOutlineMail } from 'react-icons/ai';
-import { SiGithub } from 'react-icons/si';
-import { IoMailSharp } from 'react-icons/io5';
+import ContactList from '../../src/components/about/ContactList';
 
 function index() {
 	return (
@@ -21,48 +19,7 @@ function index() {
 					<ProjectList />
 				</HStack>
 				<SectionDivider section='컨택트' />
-				<HStack
-					fontSize='14px'
-					fontWeight='semibold'
-					spacing='6'
-					flexDir={['column', 'row']}
-				>
-					<Box>
-						<IoMailSharp
-							style={{
-								display: 'inline-block',
-								fontSize: '14px',
-								marginRight: '6px',
-							}}
-						/>
-						<Text
-							color='blue.400'
-							as='a'
-							href='mailto:rlaxogud921@gmail.com'
-							cursor='pointer'
-						>
-							rlaxogud921@gmail.com
-						</Text>
-					</Box>
-					<Box>
-						<SiGithub
-							style={{
-								display: 'inline-block',
-								fontSize: '14px',
-								marginRight: '6px',
-							}}
-						/>
-						<Text
-							color='blue.400'
-							as='a'
-							cursor='pointer'
-							href='https://github.com/Knorway'
-							target='_blank'
-						>
-							https://github.com/Knorway
-						</Text>
-					</Box>
-				</HStack>
+				<ContactList />
 			</Fade>
 		</HStack>
 	);
